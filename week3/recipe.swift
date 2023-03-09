@@ -37,9 +37,10 @@ struct PancakeRecipe {
 
     // when the iteration number matches up with the step number it prints the corresponding instruction
     func give_instructions(_ d: [Int: String]) {
-        var count = 1
+        var count: Int = 1
         // ! error: finding matches but not continuing to iterate
         for (key, value) in instructions {
+            // ! dictionaries r unordered in swift....theres a randomness element to
             if count == key {
                 print("step \(count). \(value)")
                 count += 1
@@ -54,13 +55,13 @@ var pancake = PancakeRecipe()
 print("Hi! Welcome to Pancake Simulator. First I'll need some details so I can generate a recipe for you.")
 
 // changes pancake ingredients by serving size and imperial/metric units
-print(pancake.change_serving())
-print(pancake.convert(pancake.ingredients))
-print(pancake.ingredients)
+// print(pancake.change_serving())
+// print(pancake.convert(pancake.ingredients))
+// print(pancake.ingredients)
 
 // printing instructions one by one
 print(pancake.give_instructions(pancake.instructions))
-// print(pancake.give_instructions(pancake.instructions))
+//print(pancake.give_instructions(pancake.instructions))
 // print(pancake.give_instructions(pancake.instructions))
 // print(pancake.give_instructions(pancake.instructions))
 // print(pancake.give_instructions(pancake.instructions))
